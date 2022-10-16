@@ -17,6 +17,14 @@ class DishesAdapter: ListAdapter<DishesItem, DishesVH>(DishesItemDU()) {
         submitList(this.list)
     }
 
+    fun updateData(position: Int){
+        val oldCheckedPosition: Int = list.indexOfFirst { it.isChecked }
+        notifyItemChanged(oldCheckedPosition)
+        list = list.map { DishesItem(text = it.text, isChecked = false) }
+        list[position].isChecked = true
+        notifyItemChanged(position)
+    }
+
     fun setListener(listener: DishesVH.DishAction){
         this.listener = listener
     }

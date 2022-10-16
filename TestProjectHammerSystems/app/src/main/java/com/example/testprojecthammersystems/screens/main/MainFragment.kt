@@ -79,10 +79,12 @@ class MainFragment : BaseFragment() {
         binding.rvDishes.adapter = dishesAdapter
         dishesAdapter.setListener(object : DishesVH.DishAction{
             override fun onDishClick(position: Int) {
-                val list: List<DishesItem> = viewModel.listDishes.value?: listOf()
-                list.map { it.isChecked = false }
-                list[position].isChecked = true
-                setDishes(list)
+//                var list: List<DishesItem> = viewModel.listDishes.value?: listOf()
+//                list = list.map{ DishesItem(isChecked = false, text = it.text) }
+//                list[position].isChecked = true
+//                dishesAdapter.notifyItemChanged(position)
+//                setDishes(list)
+                dishesAdapter.updateData(position)
             }
 
         })
