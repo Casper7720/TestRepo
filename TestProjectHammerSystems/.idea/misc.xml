@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/drawable/background_spiner.xml" value="0.2" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/drawable/dish_selector.xml" value="0.2165" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/font/sf_ui_displei.xml" value="0.3703125" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/activity_main.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/fragment_basket.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/fragment_main.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/fragment_user.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/inc_toolbar.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/item_banner.xml" value="0.4348327566320646" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/item_dish.xml" value="0.9" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/item_product.xml" value="0.544799176107106" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/layout/item_product_price_button.xml" value="1.1" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/menu/app_main_nav_menu.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/menu/main_menu.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.168" />
+        <entry key="..\:/Users/kiril/AndroidStudioProjects/TestProjectHammerSystems/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.168" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:text="Пицца"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textSize="13sp"
+        app:cornerRadius="6dp"
+        android:maxLines="1"
+        android:layout_margin="4dp"
+        android:textColor="@color/baseGrey"
+        android:backgroundTint="@color/white"/>
+
+</LinearLayout>
