@@ -1,4 +1,4 @@
-package com.example.testprojecthammersystems.core
+package com.example.testprojecthammersystems.core.api
 
 import com.example.testprojecthammersystems.data.model.Product
 import retrofit2.Call

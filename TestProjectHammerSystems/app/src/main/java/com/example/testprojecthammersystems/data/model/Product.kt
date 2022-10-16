@@ -1,5 +1,8 @@
 package com.example.testprojecthammersystems.data.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 data class Product(
     val description: String,
     val id: Int,
@@ -9,7 +12,8 @@ data class Product(
     val tag: String
 )
 
+@Parcelize
 data class Price(
     val price: Int,
     val size: Double
-)
+): Parcelable

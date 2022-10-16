@@ -1,4 +1,4 @@
-package com.example.testprojecthammersystems.base
+package com.example.testprojecthammersystems.screens.base
 
 
 import android.os.Bundle

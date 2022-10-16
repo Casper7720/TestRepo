@@ -5,18 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import com.example.testprojecthammersystems.R
-import com.example.testprojecthammersystems.base.BaseFragment
+import com.example.testprojecthammersystems.core.dataBase.AppDatabase
 import com.example.testprojecthammersystems.data.model.BannerItem
 import com.example.testprojecthammersystems.data.model.DishesItem
 import com.example.testprojecthammersystems.data.model.Product
-import com.example.testprojecthammersystems.data.model.ProductItem
 import com.example.testprojecthammersystems.databinding.FragmentMainBinding
+import com.example.testprojecthammersystems.screens.base.BaseFragment
 import com.example.testprojecthammersystems.screens.main.adapter.BannersAdapter
 import com.example.testprojecthammersystems.screens.main.adapter.DishesAdapter
 import com.example.testprojecthammersystems.screens.main.adapter.ProductsAdapter
 import com.example.testprojecthammersystems.screens.main.viewHolder.DishesVH
-import java.util.*
 
 
 class MainFragment : BaseFragment() {
@@ -28,6 +28,7 @@ class MainFragment : BaseFragment() {
     private lateinit var dishesAdapter: DishesAdapter
     private lateinit var productsAdapter: ProductsAdapter
 
+
     override fun getRootView(): ViewGroup = binding.root
 
 
@@ -37,7 +38,6 @@ class MainFragment : BaseFragment() {
     ): View {
 
         binding = FragmentMainBinding.inflate(layoutInflater)
-        viewModel = MainViewModel()
 
         return binding.root
     }
@@ -46,6 +46,18 @@ class MainFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         observe()
         initView()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val db = Room.databaseBuilder(
+            this.app(),
+            AppDatabase::class.java, "appDataBase"
+        ).build()
+
+        viewModel = MainViewModel(db.productDao())
+
     }
 
     private fun initView() {
@@ -77,21 +89,16 @@ class MainFragment : BaseFragment() {
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvDishes.adapter = dishesAdapter
-        dishesAdapter.setListener(object : DishesVH.DishAction{
+        dishesAdapter.setListener(object : DishesVH.DishAction {
             override fun onDishClick(position: Int) {
-//                var list: List<DishesItem> = viewModel.listDishes.value?: listOf()
-//                list = list.map{ DishesItem(isChecked = false, text = it.text) }
-//                list[position].isChecked = true
-//                dishesAdapter.notifyItemChanged(position)
-//                setDishes(list)
                 dishesAdapter.updateData(position)
             }
 
         })
     }
 
-    private fun setDishes(list: List<DishesItem>?){
-        dishesAdapter.setData(list?: listOf())
+    private fun setDishes(list: List<DishesItem>?) {
+        dishesAdapter.setData(list ?: listOf())
     }
 
     private fun initProducts() {
@@ -100,7 +107,7 @@ class MainFragment : BaseFragment() {
         binding.productsRv.adapter = productsAdapter
     }
 
-    private fun setProducts(list: List<Product>){
+    private fun setProducts(list: List<Product>) {
         productsAdapter.setData(list)
     }
 
@@ -110,16 +117,16 @@ class MainFragment : BaseFragment() {
     }
 
 
-    private fun observe(){
+    private fun observe() {
         viewModel.listProduct.observe(viewLifecycleOwner) { list ->
-            if(list == null){
+            if (list == null) {
                 viewModel.getPizzaData()
-            } else{
+            } else {
                 setProducts(list)
             }
         }
 
-        viewModel.listDishes.observe(viewLifecycleOwner){ list ->
+        viewModel.listDishes.observe(viewLifecycleOwner) { list ->
             setDishes(list)
         }
     }
